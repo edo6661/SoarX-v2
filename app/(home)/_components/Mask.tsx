@@ -37,14 +37,28 @@ export const Mask = ({
     }
   };
 
+  // ! default from acernity
+
+  // useEffect(() => {
+  //   if (containerRef.current) {
+  //     containerRef.current.addEventListener("mousemove", updateMousePosition);
+  //     return () => {
+  //       containerRef.current?.removeEventListener(
+  //         "mousemove",
+  //         updateMousePosition
+  //       );
+  //     };
+  //   }
+  // }, []);
+
+  // ! without warning
+
   useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.addEventListener("mousemove", updateMousePosition);
+    const current = containerRef.current;
+    if (current) {
+      current.addEventListener("mousemove", updateMousePosition);
       return () => {
-        containerRef.current?.removeEventListener(
-          "mousemove",
-          updateMousePosition
-        );
+        current.removeEventListener("mousemove", updateMousePosition);
       };
     }
   }, []);

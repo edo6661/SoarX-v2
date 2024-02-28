@@ -1,12 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { AiOutlineCalendar } from "react-icons/ai";
-import Link from "next/link";
 import { FollowingPointer } from "./_components/FollowingPointer";
-import Image from "next/image";
-import { formatDate } from "@/utils/formatDate";
+import useEvents from "@/hooks/useEvents";
 
 const EventsPage = () => {
+  const { data: events } = useEvents();
   return (
     <>
       <section className="section ">
@@ -15,19 +12,19 @@ const EventsPage = () => {
             <h1 className="text-5xl">Ongoing Events</h1>
           </div>
           {/* TODO change after database change */}
-          {/* <section className="all-events pt-8">
-            {event.length > 0 ? (
-              <div className="grid-4">
-                {event.map((e: any) => (
+          <section className="all-events pt-8">
+            {events && events.length > 0 ? (
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {events.map((e) => (
                   <>
-                    <FollowingPointer details={e} key={e._id} />
+                    <FollowingPointer {...e} key={e.id} />
                   </>
                 ))}
               </div>
             ) : (
               <h1>No Ongoing Events Currently</h1>
             )}
-          </section> */}
+          </section>
         </div>
       </section>
       <section className="pb-32">

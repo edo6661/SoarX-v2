@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Event {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  date DateTime
+  description String
+  imageUrl String
+  location String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  creatorId String @db.ObjectId 
+  creator User @relation(name: "Creator", fields: [creatorId], references: [id])
+}
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  username String @unique
+  profilePhoto  String
+  externalUserId String @unique
+  admin Boolean @default(false)
+  events Event[] @relation("Creator")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
