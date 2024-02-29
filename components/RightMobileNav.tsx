@@ -4,6 +4,7 @@ import Hamburger from "hamburger-react";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const RightMobileGlass = () => {
   const [isClient, setIsClient] = useState(false);
@@ -24,14 +25,14 @@ const RightMobileGlass = () => {
         {/* TODO */}
         {isClient && (
           <>
-            {/* <SignedOut>
+            <SignedOut>
               <button className="btn-glass" onClick={handleSignIn}>
                 Sign in
               </button>
             </SignedOut>
             <SignedIn>
               <UserButton />
-            </SignedIn> */}
+            </SignedIn>
           </>
         )}
       </div>
