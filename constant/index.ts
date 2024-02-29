@@ -299,3 +299,12 @@ export const testimonialMessage = [
       "The level of engagement and expertise within this community is unparalleled, fostering an environment where ideas flourish and connections are made.",
   },
 ];
+
+export const initialValueAddEvent = {
+  title: "",
+  description: "",
+  imageUrl: "",
+  date: "",
+  location: "",
+  creatorId: "",
+};

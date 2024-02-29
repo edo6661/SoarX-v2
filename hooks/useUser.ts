@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useUser = (id: string) => {
   const fetchUser = async () => {
-    const { data } = await axios.get(`/api/user?id=${id}`);
+    const { data } = await axios.get(`/api/externalUser?externalUserId=${id}`);
     return data;
   };
   const { data, isLoading, isError, error, refetch } = useQuery<User>({

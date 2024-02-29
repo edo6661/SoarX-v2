@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
 interface Props {
   params: {
     id: string;
