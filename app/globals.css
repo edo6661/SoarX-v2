@@ -116,3 +116,21 @@
     border: 1px solid rgba(255, 255, 255, 0.51);
   }
 }
+
+/* ! hero section */
+
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --slate-900: rgb(15, 23, 42);
+}
+
+@layer components {
+  .square-bg {
+    background-image: url("/images/hovered-hero-bg.png");
+    @apply bg-cover;
+  }
+  .cursor-hero {
+    @apply absolute inset-0 h-full w-full opacity-50 square-bg z-0;
+  }
+}
