@@ -23,7 +23,7 @@ const HomeLayout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      <main className={cn("pt-32", poppins.className)}>{children}</main>
+      <main className="">{children}</main>
       <Footer />
     </>
   );

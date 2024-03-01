@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <motion.div className="container-nav-glass ">
-        <div className="nav-glass glass-bg p-4 rounded-xl text-white max-w-7xl mx-auto grid items-center grid-cols-3 ">
+        <div className="nav-glass glass-bg p-4 rounded-xl text-white max-w-7xl mx-auto grid items-center grid-cols-3">
           <div className=" sm:block hidden">
             <NavMenu />
           </div>

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import HeroSection from "./_components/HeroSection";
 import OurAimSection from "./_components/OurAimSection";

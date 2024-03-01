@@ -134,3 +134,14 @@
     @apply absolute inset-0 h-full w-full opacity-50 square-bg z-0;
   }
 }
+/* ! hero */
+
+.cursor-hero {
+  @apply absolute inset-0 h-full w-full opacity-50 square-bg z-0;
+}
+.input-hero {
+
+  @apply mx-auto pl-4 py-4 rounded-3xl border-nav bg-black italic placeholder:text-white font-medium h-full w-full;
+  color: white !important;
+}
+
