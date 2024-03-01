@@ -1,17 +1,34 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
 import { Autoplay } from "swiper/modules";
-import { partnersImageLinks } from "@/constant";
 
+// Import Swiper styles
+import "swiper/css";
+const imgLinks = [
+  "/images/Reskilll.png",
+  "/images/Give My Certificate.png",
+  "/images/Hack2Skill.png",
+  "/images/c3u.png",
+  "/images/CN.png",
+  "/images/CB.png",
+  "/images/sparkar.png",
+  "/images/uipath.png",
+  "/images/azdevlogonew.png",
+  "/images/mukand.png",
+  "/images/github.png",
+  "/images/snapchat.png",
+  "/images/meta.png",
+  "/images/microsoft.png",
+  "/images/partner-google.png",
+  "/images/partner-polka.png",
+  "/images/digitalocean-partner.png",
+];
 const Partners = () => {
   return (
-    <section className="section">
+    <section className="pt-[70px]">
       <div className="container">
-        <h1 className="text-center mb-10">Our Partners</h1>
+        <h1 className="text-center mb-10 text-6xl font-semibold tracking-wide partner-heading">Our Partners</h1>
 
         <Swiper
           className="mySwiper"
@@ -49,7 +66,7 @@ const Partners = () => {
             },
           }}
         >
-          {partnersImageLinks.map((e, index) => (
+          {imgLinks.map((e, index) => (
             <SwiperSlide key={index}>
               <div className="partner-imgwrap">
                 <Image

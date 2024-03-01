@@ -52,9 +52,9 @@ const PressClippingSection = () => {
   };
 
   return (
-    <section className="section ">
+    <section className="section pt-[70px] ">
       <div className="container">
-        <h1 className="text-center pb-10">Press Clippings</h1>
+        <h1 className="text-center pb-10 text-6xl font-semibold">Press Clippings</h1>
         <div>
           <LayoutGridSection />
         </div>
