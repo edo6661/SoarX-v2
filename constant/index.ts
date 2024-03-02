@@ -308,3 +308,12 @@ export const initialValueAddEvent = {
   location: "",
   creatorId: "",
 };
+
+export const permissionOptions = ["Admin", "User", "Superadmin"];
+
+export const initialValuePermission = {
+  id: "",
+  admin: "",
+};
+
+export const formatStr = "EEE MMM  dd yyyy";

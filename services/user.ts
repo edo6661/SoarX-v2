@@ -6,36 +6,21 @@ import { Admin } from "@prisma/client";
 export const getCurrentUser = async () => {
   try {
     const self = await currentUser();
+    if (!self) return;
     return db.user.findUnique({
       where: {
         externalUserId: self?.id!,
       },
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
 export const getAllUser = async () => {
   try {
-    return db.user.findMany();
+    return db.user.findMany({});
   } catch (err) {
-    console.log(err);
-  }
-};
-
-export const updateAdminPermission = async (id: string, admin: Admin) => {
-  try {
-    return db.user.update({
-      where: {
-        id,
-      },
-      data: {
-        admin,
-      },
-    });
-  } catch (err) {
-    console.log(err);
-    throw err;
+    console.error(err);
   }
 };

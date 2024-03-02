@@ -1,16 +1,15 @@
 import { UploadDropzone } from "@/lib/utils";
 import React from "react";
+import { UseFormSetValue } from "react-hook-form";
 interface ImageUploadProps {
-  setValue: React.Dispatch<React.SetStateAction<any>>;
+  setValue: UseFormSetValue<any>;
 }
 const ImageUpload = ({ setValue }: ImageUploadProps) => {
   return (
     <>
       <UploadDropzone
         endpoint="imageUploader"
-        onClientUploadComplete={(res) =>
-          setValue((prev: any) => ({ ...prev, imageUrl: res[0].url }))
-        }
+        onClientUploadComplete={(res) => setValue("imageUrl", res[0].url)}
         appearance={{
           container: {
             padding: "0.5rem 0",

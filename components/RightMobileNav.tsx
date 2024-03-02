@@ -31,7 +31,7 @@ const RightMobileGlass = () => {
               </button>
             </SignedOut>
             <SignedIn>
-              <UserButton />
+              <UserButton afterSignOutUrl="/" />
             </SignedIn>
           </>
         )}

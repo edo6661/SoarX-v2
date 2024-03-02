@@ -76,7 +76,7 @@ const FormAddEvent = ({ id, username }: Partial<User>) => {
             "grid-cols-1": !imageUrl,
           })}
         >
-          <ImageUpload setValue={setFormData} />
+          {/* <ImageUpload setValue={setFormData} /> */}
           {imageUrl && (
             <Image
               src={imageUrl}
