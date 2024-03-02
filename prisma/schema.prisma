@@ -3,12 +3,13 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "cockroachdb"
   url      = env("DATABASE_URL")
 }
 
+
 model Event {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id String @id @default(uuid()) 
   title String
   date DateTime
   description String
@@ -17,18 +18,34 @@ model Event {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  creatorId String @db.ObjectId 
-  creator User @relation(name: "Creator", fields: [creatorId], references: [id])
+  creatorId String 
+  creator User @relation(name: "EventCreator", fields: [creatorId], references: [id])
+  @@index([id], name: "id_index")
+  @@index([creatorId], name: "creatorId_index")
+  @@index([title], name: "search_index")
 }
 
 model User {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id String @id @default(uuid()) 
   username String @unique
   profilePhoto  String
   externalUserId String @unique
   admin Boolean @default(false)
-  events Event[] @relation("Creator")
 
+  events Event[] @relation("EventCreator")
+  blogs Blog[] @relation("BlogCreator")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Blog {
+  id String @id @default(uuid()) 
+  title String
+  content String
+  imageUrl String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  creatorId String 
+  creator User @relation(name: "BlogCreator", fields: [creatorId], references: [id])
 }

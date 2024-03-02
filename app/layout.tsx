@@ -28,6 +28,7 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
+        {/* ! children have special behaviour  */}
         <Providers>{children}</Providers>
       </body>
     </html>

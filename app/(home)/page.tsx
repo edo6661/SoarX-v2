@@ -5,11 +5,20 @@ import Partners from "./_components/PartnersSection";
 import PressClippingSection from "./_components/PressClippingSection";
 import Testimonial from "./_components/Testimonial";
 import Discord from "./_components/Discord";
+import UserPosts from "./_components/UserPosts";
 
-const HomePage = () => {
+import { currentUser } from "@clerk/nextjs";
+
+const HomePage = async () => {
+  const self = await currentUser();
+  if (!self) return;
+
   return (
     <>
       <HeroSection />
+      <div className="bg-red-500 w-full">
+        <UserPosts id={self?.id!} />
+      </div>
       <OurAimSection />
       <Partners />
       <PressClippingSection />
