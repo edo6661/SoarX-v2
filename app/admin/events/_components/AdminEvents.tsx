@@ -4,10 +4,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineCalendar } from "react-icons/ai";
 import Image from "next/image";
 import { formatDate } from "@/utils/formatDate";
-import useEvents from "@/hooks/useEvents";
 
 const Events = () => {
-  const { data: allEvents } = useEvents();
   const toast = useRef(null);
 
   // const accept = (_id) => {
@@ -86,7 +84,7 @@ const Events = () => {
       </div>
       <section className="all-events pt-8">
         <div className="grid-4">
-          {allEvents &&
+          {/* {allEvents &&
             allEvents.map((e) => (
               <div className="events-box aim-box" key={e.id}>
                 <div className="events-img">
@@ -109,16 +107,16 @@ const Events = () => {
                     <Link href={`/admin/events/edit/${e.id}`}>
                       <button className="btn-primary mt-4">Edit</button>
                     </Link>
-                    {/* <button
+                    <button
                     className="btn-primary red mt-4"
                     onClick={() => confirm2(e._id)}
                   >
                     Delete
-                  </button> */}
+                  </button>
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
         </div>
       </section>
     </>

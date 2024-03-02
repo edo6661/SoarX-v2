@@ -1,9 +1,7 @@
 "use client";
 import { FollowingPointer } from "./_components/FollowingPointer";
-import useEvents from "@/hooks/useEvents";
 
 const EventsPage = () => {
-  const { data: events } = useEvents();
   return (
     <>
       <section className="section ">
@@ -13,7 +11,7 @@ const EventsPage = () => {
           </div>
           {/* TODO change after database change */}
           <section className="all-events pt-8">
-            {events && events.length > 0 ? (
+            {/* {events && events.length > 0 ? (
               <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {events.map((e) => (
                   <>
@@ -23,7 +21,7 @@ const EventsPage = () => {
               </div>
             ) : (
               <h1>No Ongoing Events Currently</h1>
-            )}
+            )} */}
           </section>
         </div>
       </section>

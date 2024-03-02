@@ -7,15 +7,16 @@ import { usePathname, useRouter } from "next/navigation";
 import useGlobalState from "../lib/zustand";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { User } from "@prisma/client";
 
-const NavMenu = () => {
+const NavMenu = ({ admin }: Partial<User>) => {
   const pathname = usePathname();
 
   return (
     <ul className="fl-itc gap-4">
       {mockMenu.map((item, index) => {
         const conGlass = item === "Home" ? "/" : `/${item.toLowerCase()}`;
-
+        if (item === "Admin" && !admin) return null;
         return (
           <li key={index}>
             <Link
@@ -33,7 +34,7 @@ const NavMenu = () => {
   );
 };
 
-export const NavMenuMobile = () => {
+export const NavMenuMobile = ({ admin }: Partial<User>) => {
   const pathname = usePathname();
   const { isNav, setIsNav } = useGlobalState();
 
@@ -61,6 +62,9 @@ export const NavMenuMobile = () => {
           >
             {mockMenu.map((item, i) => {
               const conGlass = item === "Home" ? "/" : `/${item}`;
+
+              if (item === "Admin" && !admin) return null;
+
               return (
                 <motion.li
                   key={item}
