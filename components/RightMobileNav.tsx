@@ -21,7 +21,7 @@ const RightMobileGlass = () => {
 
   return (
     <>
-      <div className="sm:block hidden justify-self-end space-x-4">
+      <div className="sm:block hidden justify-self-end space-x-4 flex">
         {/* TODO */}
         {isClient && (
           <>
@@ -35,8 +35,7 @@ const RightMobileGlass = () => {
             </SignedIn>
           </>
         )}
-      </div>
-      <div
+        <div
         className="justify-self-end space-x-4 sm:hidden block"
         onClick={() => setIsNav(!isNav)}
       >
@@ -47,6 +46,8 @@ const RightMobileGlass = () => {
           toggle={setIsNav as React.Dispatch<React.SetStateAction<boolean>>}
         />
       </div>
+      </div>
+      
     </>
   );
 };

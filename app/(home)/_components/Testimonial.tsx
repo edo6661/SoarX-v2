@@ -8,10 +8,10 @@ import Image from "next/image";
 
 const Testimonial = () => {
   return (
-    <section className="section test">
+    <section className="section test pb-[100px]">
       <div className="container">
-        <h1 className="text-center">Testimonials</h1>
-        <div className="mt-5 ">
+        <h1 className="text-center text-6xl font-semibold">Testimonials</h1>
+        <div className="mt-[70px] ">
           <Swiper
             spaceBetween={10}
             slidesPerView={3}
