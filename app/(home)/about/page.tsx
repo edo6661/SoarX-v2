@@ -1,3 +1,4 @@
+"use client";
 import Discord from "../_components/Discord";
 import OurAimSection from "../_components/OurAimSection";
 import Partners from "../_components/PartnersSection";
