@@ -28,7 +28,7 @@ const Partners = () => {
   return (
     <section className="pt-[70px]">
       <div className="container">
-        <h1 className="text-center mb-10 text-6xl font-semibold tracking-wide partner-heading">Our Partners</h1>
+        <h1 className="text-center mb-[40px] text-6xl font-semibold tracking-wide partner-heading">Our Partners</h1>
 
         <Swiper
           className="mySwiper"

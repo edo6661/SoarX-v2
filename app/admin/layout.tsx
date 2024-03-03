@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import React from "react";
-import AdminLayout from "./_components/AdminLayout";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,11 +21,9 @@ interface Props {
 
 const Admin = ({ children }: Props) => {
   return (
-    <>
-      <main className={cn("", poppins.className)}>
-        <AdminLayout>{children}</AdminLayout>
-      </main>
-    </>
+    <div className="antialiased text-gray-900 bg-white">
+    {children}
+    </div>
   );
 };
 
