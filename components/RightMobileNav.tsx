@@ -21,7 +21,7 @@ const RightMobileGlass = () => {
 
   return (
     <>
-      <div className="sm:block hidden justify-self-end space-x-4 flex">
+      <div className="flex justify-self-end space-x-4 ">
         {/* TODO */}
         {isClient && (
           <>
@@ -31,23 +31,19 @@ const RightMobileGlass = () => {
               </button>
             </SignedOut>
             <SignedIn>
-              <UserButton />
+              <UserButton afterSignOutUrl="/" />
             </SignedIn>
           </>
         )}
-        <div
-        className="justify-self-end space-x-4 sm:hidden block"
-        onClick={() => setIsNav(!isNav)}
-      >
-        {/* <Hamburger distance="md" size={25} /> */}
-        <Hamburger
-          size={25}
-          toggled={isNav}
-          toggle={setIsNav as React.Dispatch<React.SetStateAction<boolean>>}
-        />
+        <div className="justify-self-end space-x-4 mobile-container">
+          {/* <Hamburger distance="md" size={25} /> */}
+          <Hamburger
+            size={25}
+            toggled={isNav}
+            toggle={setIsNav as React.Dispatch<React.SetStateAction<boolean>>}
+          />
+        </div>
       </div>
-      </div>
-      
     </>
   );
 };

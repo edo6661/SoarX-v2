@@ -2,14 +2,12 @@
 import ImageUpload from "@/components/ImageUpload";
 import { Input } from "@/components/ui/input";
 import { initialValueAddEvent } from "@/constant";
-import useUser from "@/hooks/useUser";
 import { cn } from "@/lib/utils";
 import { User } from "@prisma/client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-const FormAddEvent = ({ id }: { id: string }) => {
-  const { data, isLoading } = useUser(id);
+const FormAddEvent = ({ id, username }: Partial<User>) => {
   const router = useRouter();
 
   const [formData, setFormData] = useState(initialValueAddEvent);
@@ -24,11 +22,10 @@ const FormAddEvent = ({ id }: { id: string }) => {
     setFormData((prev) => ({ ...prev, imageUrl: "" }));
 
   const { title, description, date, imageUrl, location, creatorId } = formData;
-  if (isLoading) return <div>Temporary Loading...</div>;
   return (
     <>
       <h2 className="text-2xl font-medium">Add Event</h2>
-      <h2 className="text-lg">test current user {data?.username}</h2>
+      <h2 className="text-lg">test current user {username}</h2>
       {/* {loading && (
         <Backdrop
           sx={{ color: "#fff", zIndex: (theme) =>  theme.zIndex.drawer + 1 }}
@@ -79,7 +76,7 @@ const FormAddEvent = ({ id }: { id: string }) => {
             "grid-cols-1": !imageUrl,
           })}
         >
-          <ImageUpload setValue={setFormData} />
+          {/* <ImageUpload setValue={setFormData} /> */}
           {imageUrl && (
             <Image
               src={imageUrl}

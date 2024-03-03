@@ -41,7 +41,7 @@ export const menuItems: MenuItem[] = [
   },
 ];
 
-export const mockMenu: string[] = ["Home", "Events", "About", "Admin"];
+export const mockMenu: string[] = ["Home", "Events", "About", "Admin", "Mock"];
 export const randomNumber = Math.floor(Math.random() * 10);
 const mockImages = [
   "https://i.pinimg.com/236x/36/9a/8e/369a8e797e85e822d258c50afdb064c4.jpg",
@@ -308,3 +308,12 @@ export const initialValueAddEvent = {
   location: "",
   creatorId: "",
 };
+
+export const permissionOptions = ["Admin", "User", "Superadmin"];
+
+export const initialValuePermission = {
+  id: "",
+  admin: "",
+};
+
+export const formatStr = "EEE MMM  dd yyyy";

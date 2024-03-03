@@ -4,12 +4,10 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { AiOutlineCalendar } from "react-icons/ai";
 import Image from "next/image";
-import useEvents from "@/hooks/useEvents";
 import { formatDate } from "@/utils/formatDate";
 
 const Events = () => {
   const toast = useRef(null);
-  const { data: allEvents } = useEvents();
   // const accept = (_id) => {
   //   deleteProduct(_id);
   //   toast.current.show({
@@ -87,7 +85,7 @@ const Events = () => {
       </div>
       <section className="all-events pt-8">
         <div className="grid-4">
-          {allEvents &&
+          {/* {allEvents &&
             allEvents.map((e) => (
               <div className="events-box aim-box" key={e.id}>
                 <div className="events-img">
@@ -110,16 +108,16 @@ const Events = () => {
                     <Link href={`/admin/events/edit/${e.id}`}>
                       <button className="btn-primary mt-4">Edit</button>
                     </Link>
-                    {/* <button
+                    <button
                     className="btn-primary red mt-4"
                     onClick={() => confirm2(e.id)}
                   >
                     Delete
-                  </button> */}
+                  </button>
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
         </div>
       </section>
     </>

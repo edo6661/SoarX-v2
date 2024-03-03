@@ -51,7 +51,6 @@ export async function POST(req: Request) {
         externalUserId: payload.data.id,
         username: payload.data.username,
         profilePhoto: payload.data.image_url,
-        admin: false,
       },
     });
   }

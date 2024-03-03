@@ -23,7 +23,7 @@ const HomeLayout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      <main className="">{children}</main>
+      <main className="pb-24">{children}</main>
       <Footer />
     </>
   );
