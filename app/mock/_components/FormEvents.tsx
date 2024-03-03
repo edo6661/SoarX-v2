@@ -11,7 +11,12 @@ import { CalendarIcon, X } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 
 import { Input } from "@/components/ui/input";
-import { eventSchema, eventInitialValues, EventSchema } from "@/schema/event";
+import {
+  eventSchema,
+  eventInitialValues,
+  EventSchema,
+  eventFormResolver,
+} from "@/schema/event";
 import CustomInput from "@/components/ui/CustomInput";
 import { motion } from "framer-motion";
 import CustomDate from "@/components/ui/CustomDate";
@@ -40,6 +45,7 @@ const FormEvents = ({ event, currentUserId, action }: FormEventsProps) => {
     : "Event created successfully";
 
   const form = useForm({
+    // resolver: eventFormResolver,
     resolver: zodResolver(eventSchema),
     defaultValues: {
       ...initialValues!,

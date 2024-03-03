@@ -13,7 +13,12 @@ import Image from "next/image";
 import { toast } from "sonner";
 import { usePathname, useRouter } from "next/navigation";
 import { useTransition } from "react";
-import { BlogSchema, blogInitialValues, blogSchema } from "@/schema/blog";
+import {
+  BlogSchema,
+  blogFormResolver,
+  blogInitialValues,
+  blogSchema,
+} from "@/schema/blog";
 import { X } from "lucide-react";
 
 interface FormBlogProps {
@@ -34,6 +39,7 @@ const FormBlog = ({ blog, currentUserId, action }: FormBlogProps) => {
     : "Blog created successfully";
 
   const form = useForm({
+    // resolver: blogFormResolver,
     resolver: zodResolver(blogSchema),
     defaultValues: {
       ...initialValues!,

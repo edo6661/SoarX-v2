@@ -9,15 +9,22 @@ import {
 } from "./form";
 import { Input } from "./input";
 import { AnimatePresence, motion } from "framer-motion";
-import { FieldError } from "react-hook-form";
+import { Control, FieldError } from "react-hook-form";
+import { EventSchema } from "@/schema/event";
+import { BlogSchema } from "@/schema/blog";
 interface CustomInputProps {
+  // control: Control<EventSchema | BlogSchema, any>;
   control: any;
+
   label: string;
   placeholder: string;
   description?: string;
   name: string;
   error: FieldError | undefined;
 }
+
+// ! sign in https://soar-x-v2.vercel.app/ first, and the sign in local
+
 const CustomInput = ({
   control,
   label,
