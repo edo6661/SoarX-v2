@@ -1,11 +1,19 @@
 import React from "react";
+import AdminSidebar from "./_components/AdminSidebar";
+import AdminSearchBar from "./_components/AdminSearchBar";
+import AdminDashboard from "./_components/AdminDashboard";
 
 const AdminPage = () => {
+  
+  
   return (
-    <h2 className="text-xl">
-      Hello,{" "}
-      {/* <span className="text-primary font-medium"> {auth?.user?.email}</span> */}
-    </h2>
+   <>
+    <div>
+    <AdminSidebar/>
+    <AdminSearchBar/>
+    <AdminDashboard/>
+    </div>
+   </>
   );
 };
 

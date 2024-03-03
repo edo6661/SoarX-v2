@@ -5,8 +5,8 @@ const OurAimSection = () => {
   return (
     <section className="pt-[70px] container">
       <div className=" our-aim-div ">
-        <h1 className="text-center text-6xl font-semibold tracking-wide">Our Aim</h1>
-        <p className=" w-4/5 pt-5 text-lg  m-auto text-center our-aim-para">
+        <h1 className="text-center text-6xl font-semibold tracking-wide mb-[30px]">Our Aim</h1>
+        <p className=" w-4/5 pt-5 text-lg  m-auto text-center our-aim-para mb-[80px]">
           Our mission is to foster a community that promotes curiosity, nurtures
           innovation, and supports the growth of aspiring technologists. Through
           our carefully curated events, engaging sessions, and exciting
